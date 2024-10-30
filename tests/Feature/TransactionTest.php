@@ -3,11 +3,9 @@
 namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 
 class TransactionTest extends TestCase {
-    use RefreshDatabase;
 
     public function test_unathorise_invalid_token(){
         $user = User::factory()->create(['balance' => 100]);
