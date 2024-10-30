@@ -70,7 +70,6 @@ class TransactionController extends Controller
 
     public function getBalance(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'email' => 'required|exists:users,email'
         ]);
@@ -79,6 +78,6 @@ class TransactionController extends Controller
             return response()->json(['error' => "Invalid User"], 400);
 
         $user = User::where('email', $request->email)->first();
-        return response()->json(['balance' => $user->balance]);
+        return response()->json(['balance' => $user->getBalance()], 200);
     }
 }
