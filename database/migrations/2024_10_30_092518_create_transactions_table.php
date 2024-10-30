@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('type', ['debit', 'credit']);
             $table->decimal('previous_balance', 15, 2);
             $table->decimal('current_balance', 15, 2);
+            $table->string('reference');
             $table->timestamps();
         });
     }
